@@ -7,13 +7,18 @@ int main() {
     int n;
     std::cin >> n;
 
-    std::set<int> s;
+    std::queue<int> q;
     for (int i = 1; i <= n; i++) {
-        s.insert(i);
+        q.push(i);
     }
 
-    while (!s.empty()) {
-        int u = ;
+    for (int i = 0; i < n; i++) {
+        int x = q.front();
+        q.pop();
+        q.push(x);
+        x = q.front();
+        q.pop();
+        std::cout << x << " ";
     }
 
     return 0;
